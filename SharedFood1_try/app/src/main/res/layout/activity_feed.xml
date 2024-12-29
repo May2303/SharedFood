@@ -1,0 +1,86 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- כותרת לבחירת פילטרים -->
+    <TextView
+        android:id="@+id/filtersTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose filters:"
+        android:textSize="18sp"
+        android:layout_gravity="start"
+        android:layout_marginBottom="8dp"
+        android:textColor="#000000" />
+
+    <!-- HorizontalScrollView for filters -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="#EEEEEE">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Filter CheckBoxes -->
+            <CheckBox
+                android:id="@+id/checkBoxKosher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kosher"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxHot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hot"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cold"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxClosed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Closed"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxDairy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dairy"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkBoxMeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meat" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Placeholder for feed content -->
+    <TextView
+        android:id="@+id/feedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Feed"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_gravity="center" />
+
+</LinearLayout>

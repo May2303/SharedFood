@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to SharedFood!\nYou can start share your food"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="80dp"/>
+
+    <!-- Button to Share Food -->
+    <Button
+        android:id="@+id/shareFoodButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Share Food       \t\t\t\t\t\t\t\t\t\t\t\t\t  שתף פוסט אוכל"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:padding="16dp"/>
+
+
+    <!-- Button to Search -->
+    <Button
+        android:id="@+id/feedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Feed \t\t\t\t\t\t\t\t\t\t\t\t\t\t                   פיד"
+        app:layout_constraintTop_toBottomOf="@id/shareFoodButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
+
+    <!-- Button to Personal Area -->
+    <Button
+        android:id="@+id/personalAreaButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Personal Area \t\t\t\t\t\t\t\t\t\t\t\t\t\t    איזור אישי"
+        app:layout_constraintTop_toBottomOf="@id/feedButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
+
+    <!-- Button to My Posts -->
+    <Button
+        android:id="@+id/myPostsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="My Posts \t\t\t\t\t\t\t\t\t\t\t\t\t\t      הפוסטים  שלי"
+        app:layout_constraintTop_toBottomOf="@id/personalAreaButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
+
+    <!-- Button to Contact Us -->
+    <Button
+        android:id="@+id/contactUsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Contact Us     \t\t\t\t\t\t\t\t\t\t\t\t\t\t         צור קשר"
+        app:layout_constraintTop_toBottomOf="@id/myPostsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
+
+
+
+    <!-- Button to FAQ -->
+    <Button
+        android:id="@+id/faqButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="FAQ \t\t\t\t\t\t\t\t\t\t\t\t\t\t              שאלות נפוצות"
+        app:layout_constraintTop_toBottomOf="@id/contactUsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:padding="16dp" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
