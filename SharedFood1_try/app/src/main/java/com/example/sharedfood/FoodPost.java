@@ -1,56 +1,67 @@
 package com.example.sharedfood;
 
-public class FoodPost {
-    private String foodDescription;
-    private boolean isKosher;
-    private boolean isHot;
-    private boolean isCold;
-    private boolean isClosed;
-    private boolean isDairy;
-    private boolean isMeat;
-    private String imageUrl;  // URL of the image uploaded (if available)
+import android.net.Uri;
 
-    // Constructor to initialize the food post with description and properties
-    public FoodPost(String foodDescription, boolean isKosher, boolean isHot, boolean isCold, boolean isClosed, boolean isDairy, boolean isMeat, String imageUrl) {
-        this.foodDescription = foodDescription;
-        this.isKosher = isKosher;
-        this.isHot = isHot;
-        this.isCold = isCold;
-        this.isClosed = isClosed;
-        this.isDairy = isDairy;
-        this.isMeat = isMeat;
-        this.imageUrl = imageUrl;  // Set image URL
+import java.io.File;
+import java.util.List;
+
+public class Post {
+    // הגדרת השדות כ- final כדי למנוע מהם שינוי אחרי יצירת האובייקט
+    private String id;
+    private String description;
+    private List<String> filters;
+    private String imageUrl; // URL של התמונה (יכול להשתנות אחרי יצירת האובייקט)
+    private Uri imageUri; // URI של התמונה
+
+
+    // Constructor
+    public Post(String description, List<String> filters, String imageUrl) {
+        this.description = description;
+        this.filters = filters;
+        this.imageUrl = imageUrl;
+    }
+    // Empty constructor for Firebase
+    public Post() {}
+
+    // Getters and setters
+    public String getId() {
+        return id;
     }
 
-    // Getter and setter methods for all the properties
-    public String getFoodDescription() {
-        return foodDescription;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public boolean isKosher() {
-        return isKosher;
+    public String getDescription() {
+        return description;
     }
 
-    public boolean isHot() {
-        return isHot;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public boolean isCold() {
-        return isCold;
+    public List<String> getFilters() {
+        return filters;
     }
 
-    public boolean isClosed() {
-        return isClosed;
+    public void setFilters(List<String> filters) {
+        this.filters = filters;
     }
 
-    public boolean isDairy() {
-        return isDairy;
-    }
-
-    public boolean isMeat() {
-        return isMeat;
-    }
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Uri getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(Uri imageUri) {
+        this.imageUri = imageUri;
+
     }
 }
