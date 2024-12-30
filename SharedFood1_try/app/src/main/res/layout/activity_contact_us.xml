@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F0FDF4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,146 +13,202 @@
 
         <!-- Title -->
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/contact_us"
-            android:textSize="28sp"
+            android:textSize="32sp"
             android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_gravity="center"
-            android:paddingBottom="16dp" />
-        <!-- Space -->
-        <View
+            android:textColor="#1B5E20"
+            android:gravity="center"
+            android:paddingBottom="24dp"
+            android:shadowColor="#33000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <!-- Shira Yogev -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Contact 1 -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shira_yogev"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#006400" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#1B5E20"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mail_label"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shira_email"
-            android:textSize="16sp"
-            android:textColor="#0000EE"
-            android:paddingBottom="12dp"
-            android:selectAllOnFocus="true"
-            android:focusable="true"
-            android:clickable="true"
-            android:textIsSelectable="true" />
-        <!-- Space -->
-        <View
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shira_yogev"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mail_label"
+                    android:textSize="16sp"
+                    android:textColor="#4CAF50"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shira_email"
+                    android:textSize="16sp"
+                    android:textColor="#0000EE"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Michael Idan -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Contact 2 -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/michael_idan"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#006400" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#1B5E20"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mail_label"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/michael_email"
-            android:textSize="16sp"
-            android:textColor="#0000EE"
-            android:paddingBottom="12dp"
-            android:selectAllOnFocus="true"
-            android:focusable="true"
-            android:clickable="true"
-            android:textIsSelectable="true" />
-        <!-- Space -->
-        <View
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/michael_idan"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mail_label"
+                    android:textSize="16sp"
+                    android:textColor="#4CAF50"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/michael_email"
+                    android:textSize="16sp"
+                    android:textColor="#0000EE"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Shirel Cohen -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Contact 3 -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shirel_cohen"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#006400" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#1B5E20"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mail_label"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/shirel_email"
-            android:textSize="16sp"
-            android:textColor="#0000EE"
-            android:paddingBottom="12dp"
-            android:selectAllOnFocus="true"
-            android:focusable="true"
-            android:clickable="true"
-            android:textIsSelectable="true" />
-        <!-- Space -->
-        <View
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shirel_cohen"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mail_label"
+                    android:textSize="16sp"
+                    android:textColor="#4CAF50"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shirel_email"
+                    android:textSize="16sp"
+                    android:textColor="#0000EE"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Daniel Bas -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <!-- Contact 4 -->
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/daniel_bas"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#006400" />
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#1B5E20"
+            app:strokeWidth="2dp"
+            android:backgroundTint="#FFFFFF">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mail_label"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/daniel_email"
-            android:textSize="16sp"
-            android:textColor="#0000EE"
-            android:paddingBottom="12dp"
-            android:selectAllOnFocus="true"
-            android:focusable="true"
-            android:clickable="true"
-            android:textIsSelectable="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/daniel_bas"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B5E20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mail_label"
+                    android:textSize="16sp"
+                    android:textColor="#4CAF50"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/daniel_email"
+                    android:textSize="16sp"
+                    android:textColor="#0000EE"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textIsSelectable="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
-
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- מצב רגיל -->
+    <item android:drawable="@drawable/button_background" android:state_enabled="true"/>
+    <!-- מצב לחיצה -->
+    <item android:drawable="@drawable/button_background" android:state_pressed="true"/>
+</selector>

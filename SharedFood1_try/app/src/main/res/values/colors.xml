@@ -3,4 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
+    <color name="green_color">#1C9529</color>
+    <color name="green_color_dark">#063C0B</color>
+    <color name="chip_background_color">#84B884</color>
 </resources>

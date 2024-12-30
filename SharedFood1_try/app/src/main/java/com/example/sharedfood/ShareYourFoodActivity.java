@@ -61,7 +61,7 @@ public class ShareYourFoodActivity extends AppCompatActivity {
     Post post;
     String imageUrl;
 
-    CheckBox kosherCheckBox, hotCheckBox, coldCheckBox, closedCheckBox, dairyCheckBox, meatCheckBox;
+    CheckBox kosherCheckBox, hotCheckBox, coldCheckBox, closedCheckBox, dairyCheckBox, meatCheckBox, veganCheckBox, vegetarianCheckBox, glutenFreeCheckBox;
 
     private final ActivityResultLauncher<Intent> galleryLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -102,6 +102,9 @@ public class ShareYourFoodActivity extends AppCompatActivity {
         closedCheckBox = findViewById(R.id.closedCheckBox);
         dairyCheckBox = findViewById(R.id.dairyCheckBox);
         meatCheckBox = findViewById(R.id.meatCheckBox);
+        veganCheckBox = findViewById(R.id.veganCheckBox);
+        vegetarianCheckBox= findViewById(R.id.vegetarianCheckBox);
+        glutenFreeCheckBox= findViewById(R.id.glutenFreeCheckBox);
 
         // Initialize views
         foodDescriptionEditText = findViewById(R.id.foodDescriptionEditText);
@@ -109,23 +112,12 @@ public class ShareYourFoodActivity extends AppCompatActivity {
         selectImageButton = findViewById(R.id.selectImageButton);
         imageView = findViewById(R.id.imageView);
 
-        // Initialize Firebase services
-        //FirebaseApp.initializeApp(ShareYourFoodActivity.this);
-
         db = FirebaseFirestore.getInstance();
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
 
         // Set up button click listeners
         selectImageButton.setOnClickListener(v -> showImageSourceDialog());
-
-       /*
-        selectImageButton.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            activityResultLauncher.launch(intent);
-        });
-        */
 
         // Share Food button listener
         uploadPostButton.setOnClickListener(v -> {
@@ -154,6 +146,10 @@ public class ShareYourFoodActivity extends AppCompatActivity {
         if (hotCheckBox.isChecked()) selectedFilters.add("Hot");
         if (coldCheckBox.isChecked()) selectedFilters.add("Cold");
         if (kosherCheckBox.isChecked()) selectedFilters.add("Kosher");
+        if(closedCheckBox.isChecked()) selectedFilters.add("closedCheckBox");
+        if(veganCheckBox.isChecked()) selectedFilters.add("veganCheckBox");
+        if(vegetarianCheckBox.isChecked()) selectedFilters.add("vegetarianCheckBox");
+        if(glutenFreeCheckBox.isChecked()) selectedFilters.add("glutenFreeCheckBox");
         post.setFilters(selectedFilters);
     }
 
@@ -307,7 +303,11 @@ public class ShareYourFoodActivity extends AppCompatActivity {
         Map<String, Object> foodPost = new HashMap<>();
         foodPost.put("description", post.getDescription());
         foodPost.put("filters", post.getFilters());
+        foodPost.put("imageUri", post.getImageUri());
+        /*
+        We can't pay for this option right now but it's exist:
         foodPost.put("imageUrl", post.getImageUrl());
+         */
         foodPost.put("timestamp", System.currentTimeMillis());
 
         // שמירת הפוסט בקולקציה "posts"
@@ -316,6 +316,12 @@ public class ShareYourFoodActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     Log.d("Firestore", "Post uploaded successfully with ID: " + documentReference.getId());
                     Toast.makeText(this, "Post uploaded successfully", Toast.LENGTH_SHORT).show();
+
+                    // ניווט חזרה לדף הבית
+                    Intent homeIntent = new Intent(ShareYourFoodActivity.this, HomePageActivity.class);
+                    homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(homeIntent);
+                    finish(); // מסיים את הפעילות הנוכחית
                 })
                 .addOnFailureListener(e -> {
                     Log.e("Firestore", "Post upload failed", e);

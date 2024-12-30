@@ -1,102 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/homeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     tools:context=".HomePageActivity">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/welcomeText"
+    <!-- Top Bar with increased text weight -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="32dp"
+        app:cardBackgroundColor="#4CAF50">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/welcomeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:shadowColor="#33000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="Food Share"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/curved_bottom_shape"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="140dp"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Quick Actions with enhanced text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:weightSum="2"
+                android:layout_marginBottom="16dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/shareFoodButton"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:rippleColor="#33000000">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:background="@drawable/card_gradient_green">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="שתף אוכל"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:shadowColor="#33000000"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/feedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:rippleColor="#33000000">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:background="@drawable/card_gradient_blue">
+
+                        <ImageView
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:src="@drawable/img"
+                            app:tint="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="פיד"
+                            android:textColor="#FFFFFF"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:shadowColor="#33000000"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="4"
+                            android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Personal Area Card with enhanced text -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="האזור האישי שלי"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#1B5E20"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/personalAreaButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="איזור אישי"
+                        android:textSize="18sp"
+                        android:layout_marginTop="16dp"
+                        app:icon="@drawable/ic_person"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:cornerRadius="16dp"
+                        app:strokeColor="#4CAF50"
+                        app:strokeWidth="2dp"
+                        android:textColor="#4CAF50"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/myPostsButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="הפוסטים שלי"
+                        android:textSize="18sp"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:cornerRadius="16dp"
+                        app:strokeColor="#4CAF50"
+                        app:strokeWidth="2dp"
+                        android:textColor="#4CAF50"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Support Cards with enhanced text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/contactUsButton"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_info"
+                            app:tint="#4CAF50" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="צור קשר"
+                            android:textColor="#4CAF50"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/faqCard"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="32dp"
+                    app:cardElevation="8dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_help"
+                            app:tint="#4CAF50" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="שאלות נפוצות"
+                            android:textColor="#4CAF50"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Enhanced Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to SharedFood!\nYou can start share your food"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
-        android:layout_marginTop="80dp"/>
-
-    <!-- Button to Share Food -->
-    <Button
-        android:id="@+id/shareFoodButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Share Food       \t\t\t\t\t\t\t\t\t\t\t\t\t  שתף פוסט אוכל"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
-        android:padding="16dp"/>
-
-
-    <!-- Button to Search -->
-    <Button
-        android:id="@+id/feedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Feed \t\t\t\t\t\t\t\t\t\t\t\t\t\t                   פיד"
-        app:layout_constraintTop_toBottomOf="@id/shareFoodButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-    <!-- Button to Personal Area -->
-    <Button
-        android:id="@+id/personalAreaButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Personal Area \t\t\t\t\t\t\t\t\t\t\t\t\t\t    איזור אישי"
-        app:layout_constraintTop_toBottomOf="@id/feedButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-    <!-- Button to My Posts -->
-    <Button
-        android:id="@+id/myPostsButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="My Posts \t\t\t\t\t\t\t\t\t\t\t\t\t\t      הפוסטים  שלי"
-        app:layout_constraintTop_toBottomOf="@id/personalAreaButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-    <!-- Button to Contact Us -->
-    <Button
-        android:id="@+id/contactUsButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Contact Us     \t\t\t\t\t\t\t\t\t\t\t\t\t\t         צור קשר"
-        app:layout_constraintTop_toBottomOf="@id/myPostsButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-
-
-    <!-- Button to FAQ -->
-    <Button
-        android:id="@+id/faqButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="FAQ \t\t\t\t\t\t\t\t\t\t\t\t\t\t              שאלות נפוצות"
-        app:layout_constraintTop_toBottomOf="@id/contactUsButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:padding="16dp" />
-
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="שתף אוכל"
+        android:textSize="18sp"
+        app:icon="@drawable/ic_add_photo"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="24dp"
+        android:backgroundTint="#4CAF50"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

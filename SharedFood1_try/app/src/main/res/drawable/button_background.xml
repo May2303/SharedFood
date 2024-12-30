@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/green_color"/> <!-- צבע הרקע של הכפתור -->
+    <corners android:radius="16dp"/> <!-- פינות מעוגלות -->
+    <elevation android:value="4dp"/> <!-- צל (תומך רק בגרסאות גבוהות יותר) -->
+</shape>

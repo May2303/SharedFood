@@ -7,86 +7,178 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <!-- Email EditText -->
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+    <!-- App Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp"
-        android:padding="16dp" />
+        android:layout_marginTop="48dp"/>
 
-    <!-- Password EditText -->
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
+    <!-- App Name -->
+    <TextView
+        android:id="@+id/appNameTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="הרשמה ל-Food Share"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
         android:layout_marginTop="16dp"
-        android:padding="16dp" />
-
-    <!-- Confirm Password EditText -->
-    <EditText
-        android:id="@+id/confirmPasswordEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:padding="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- ScrollView for Terms and Conditions -->
-    <ScrollView
-        android:id="@+id/termsScrollView"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:layout_constraintTop_toBottomOf="@id/confirmPasswordEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp">
+    <!-- Signup Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="32dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/appNameTextView"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- TextView for Terms and Conditions -->
-        <TextView
-            android:id="@+id/termsTextView"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/terms_and_conditions"
-            android:textSize="14sp"
-            android:padding="8dp" />
+            android:layout_height="match_parent">
 
-    </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-    <CheckBox
-        android:id="@+id/termsCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="קראתי והסכמתי לתקנון"
-        app:layout_constraintTop_toBottomOf="@id/termsScrollView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+                <!-- Email Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    app:startIconTint="#4CAF50"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#4CAF50"
+                    app:hintTextColor="#4CAF50">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Password Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:layout_marginTop="16dp"
+                    app:startIconTint="#4CAF50"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="#4CAF50"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#4CAF50"
+                    app:hintTextColor="#4CAF50">
 
-    <!-- Sign Up Button -->
-    <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="Sign Up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirmPasswordEditText" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textSize="16sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Confirm Password Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/confirmPasswordInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirm Password"
+                    android:layout_marginTop="16dp"
+                    app:startIconTint="#4CAF50"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="#4CAF50"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#4CAF50"
+                    app:hintTextColor="#4CAF50">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/confirmPasswordEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textSize="16sp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Terms and Conditions Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    app:strokeColor="#4CAF50"
+                    app:strokeWidth="1dp">
+
+                    <ScrollView
+                        android:id="@+id/termsScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp">
+
+                        <TextView
+                            android:id="@+id/termsTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/terms_and_conditions"
+                            android:textSize="14sp"
+                            android:padding="16dp"
+                            android:textColor="#333333"/>
+                    </ScrollView>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Terms Checkbox -->
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/termsCheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="קראתי והסכמתי לתקנון"
+                    android:textSize="16sp"
+                    android:layout_marginTop="16dp"
+                    app:buttonTint="#4CAF50"/>
+
+                <!-- Sign Up Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signUpButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="הרשם"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_marginTop="24dp"
+                    app:cornerRadius="16dp"
+                    android:backgroundTint="#4CAF50"/>
+
+                <!-- Login Link -->
+                <TextView
+                    android:id="@+id/loginLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="כבר יש לך חשבון? התחבר כאן"
+                    android:textColor="#4CAF50"
+                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
